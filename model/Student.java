@@ -3,18 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library.model;
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author shsun
  */
-public class Student extends User{
+public class Student extends User {
     
     private String studentID;
+
+    private List<Book2> borrowedBooks = new ArrayList<>();
     
-    public Student(String studentID){
-      
+    public Student(String userName, String email, String passWord, String studentID){
+        super(userName, email, passWord);
+        this.studentID = studentID;
     }
     
     public String getStudentID(){
@@ -22,6 +28,13 @@ public class Student extends User{
     }
     public void setStudentID(String studentID){
       this.studentID = studentID;
-    }  
-    
+    }
+
+    public void borrowBook(Book2 book) {
+        borrowedBooks.add(book);
+    }
+
+    public List<Book2> getBorrowedBooks() {
+        return borrowedBooks;
+    }
 }

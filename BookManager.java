@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -17,30 +16,29 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import library.model.Book;
-import library.include.Message;
+import model.Book;
+import include.Message;
 
 /**
  *
  * @author shsun
  */
-public class BookManager implements ActionListener{
+public class BookManager extends JFrame implements ActionListener {
 
-    JFrame jf = new JFrame();
-    JTable jt = new JTable(); 
+    JTable jt = new JTable();
     JTextField Id, Name, Author, Price, Classify, Publishdate;
     
-    private ArrayList<Book> list = new ArrayList<Book>();
+    private List<Book> list = new ArrayList<>();
     Object[] row = new Object[6];
     
     //Table
@@ -49,7 +47,7 @@ public class BookManager implements ActionListener{
          
         
     public BookManager() {
-        
+
         //Table
         model.setColumnIdentifiers(columns);   
         jt.setModel(model);   
@@ -104,33 +102,31 @@ public class BookManager implements ActionListener{
                 
         JScrollPane pane = new JScrollPane(jt);
         pane.setBounds(0, 0, 1500, 400);
-        jf.setLayout(null);
-        jf.add(pane);
+        setLayout(null);
+        add(pane);
 
-        jf.add(jId);
-        jf.add(jName);
-        jf.add(jAuthor);
-        jf.add(jPrice);
-        jf.add(jClassify);
-        jf.add(jPublishdate);
+        add(jId);
+        add(jName);
+        add(jAuthor);
+        add(jPrice);
+        add(jClassify);
+        add(jPublishdate);
         
-        jf.add(Id);
-        jf.add(Name);
-        jf.add(Author);
-        jf.add(Price);
-        jf.add(Classify);
-        jf.add(Publishdate);
+        add(Id);
+        add(Name);
+        add(Author);
+        add(Price);
+        add(Classify);
+        add(Publishdate);
         
-        jf.add(Add);
-        jf.add(Update);
-        jf.add(Delete);
+        add(Add);
+        add(Update);
+        add(Delete);
         
-        jf.setResizable(true);      
-        jf.setSize(1500,800);
-        jf.setLocationRelativeTo(null);
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jf.setVisible(true);     
-        
+        setResizable(true);
+        setSize(1500,800);
+        setLocationRelativeTo(null);
+
         //set textfile values
         jt.addMouseListener(new MouseAdapter(){
         
@@ -166,12 +162,12 @@ public class BookManager implements ActionListener{
             boolean isVaild = true; 
             
             if ("".equals(id) || "".equals(name) || "".equals(author) || "".equals(price) || "".equals(classify)) {
-              Message.showMessage(jf, "ID, Name, Author, Price, and Classify cannot be empty","");
+              Message.showMessage(this, "ID, Name, Author, Price, and Classify cannot be empty","");
               isVaild = false;
             }
             for (Book bk : list) {
                if (bk.getId() != null && bk.getId().equals(id)){
-                 Message.showMessage(jf, "Id must be unique!","Error");
+                 Message.showMessage(this, "Id must be unique!","Error");
                  isVaild = false;
                }
             }
@@ -237,7 +233,7 @@ public class BookManager implements ActionListener{
                   }
               }     
             }else{
-               Message.showMessage(jf, "Update Error", "Error");
+               Message.showMessage(this, "Update Error", "Error");
             }        
         }else{
             int i = jt.getSelectedRow();
@@ -255,7 +251,7 @@ public class BookManager implements ActionListener{
                 //delete from table
                 model.removeRow(i);
             }else{
-                Message.showMessage(jf, "Delete Error", "Error");
+                Message.showMessage(this, "Delete Error", "Error");
             }   
            
         }
@@ -266,8 +262,4 @@ public class BookManager implements ActionListener{
         }    
         
     }
-    
-    public static void main(String[] args) {
-        new BookManager();
-    }    
 }

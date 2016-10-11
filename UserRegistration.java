@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library;
 
 /**
  *
@@ -13,20 +12,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.*;
-import library.include.Message;
-import library.include.RegisterCheck;
-import library.model.User;
+import include.Message;
+import include.RegisterCheck;
+import model.User;
 public class UserRegistration implements ActionListener {
    
     private ArrayList<User> list = new ArrayList<User>();
