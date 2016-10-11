@@ -140,7 +140,7 @@ public class UserRegistration implements ActionListener {
                 list.add(user);
                 
                 //save to disk 
-                String str = user.getUserName() + "&&" + user.getEmail() + "&&"+ user.getPassWord() +"\n";
+                String str = user.getUserName() + "&&"+ user.getPassWord() +"&&" + user.getEmail() +"\n";
                 try {
                     writeToFile(str);
                 } catch (IOException ex) {

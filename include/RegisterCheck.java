@@ -62,7 +62,10 @@ public class RegisterCheck {
                     break;
                 s1 = s1 + new String(b, 0, i);
             }
+            System.out.println(s1);
+            System.out.println(str);
             int i = s1.indexOf(str);
+            System.out.println(i);
             if (i != -1){ return true;}
         }
         return false;
