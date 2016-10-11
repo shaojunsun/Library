@@ -10,5 +10,18 @@ package library.model;
  * @author shsun
  */
 public class Librarian extends User{
+
+ private String librarianID;
+    
+   public Librarian(String librarianID){
+      
+    }
+    
+    public String getLibrarianID(){
+      return librarianID;
+    }
+    public void setLibrarianID(String librarianID){
+      this.librarianID = librarianID;
+    }      
     
 }
