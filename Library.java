@@ -36,13 +36,13 @@ public class Library extends JFrame {
         JButton addAuthorsButton = new JButton("Add an author");
         JButton addBooksButton = new JButton("Add a book");
         JButton lendBookButton = new JButton("Lend a book");
-        JButton showLendedBooks = new JButton("Show lended books");
+        JButton showBorrowedBooks = new JButton("Show borrowed books");
 
         JPanel buttonsPanel = new JPanel(new FlowLayout());
         buttonsPanel.add(addAuthorsButton);
         buttonsPanel.add(addBooksButton);
         buttonsPanel.add(lendBookButton);
-        buttonsPanel.add(showLendedBooks);
+        buttonsPanel.add(showBorrowedBooks);
 
         add(buttonsPanel, BorderLayout.SOUTH);
 
@@ -64,8 +64,8 @@ public class Library extends JFrame {
             lbApp.pack();
             lbApp.setVisible(true);
         });
-        showLendedBooks.addActionListener(e -> {
-            ShowLendedBooks slbApp = new ShowLendedBooks(this);
+        showBorrowedBooks.addActionListener(e -> {
+            ShowBorrowedBooks slbApp = new ShowBorrowedBooks(this);
 
             slbApp.pack();
             slbApp.setVisible(true);

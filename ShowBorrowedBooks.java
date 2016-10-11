@@ -9,9 +9,10 @@ import java.util.List;
 /**
  * Created by oaev on 11.10.16.
  */
-public class ShowLendedBooks extends JFrame {
+public class ShowBorrowedBooks extends JFrame {
 
-    public ShowLendedBooks(Library library) throws HeadlessException {
+    public ShowBorrowedBooks(Library library) throws HeadlessException {
+        super("Show borrowed books");
 
         JPanel tablePanel = new JPanel(new BorderLayout());
 
