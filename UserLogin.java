@@ -112,7 +112,9 @@ public class UserLogin implements ActionListener {
                 }
             }
                   
-          }
+          }else if (act.equals("Quit")) {
+            System.exit(0);
+        }  
 
      }
     }
