@@ -23,7 +23,7 @@ import library.include.RegisterCheck;
 
 public class UserLogin implements ActionListener {
    
-    private String path = "D:\\users.txt";
+    private String path = "/tmp/users.txt";
     JFrame jf;
     JTextField uname;
     JPasswordField pass;
